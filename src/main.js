@@ -17,6 +17,17 @@ const store = new Vuex.Store({
       { id: 6, title: 'Home Alone', gen: 'Family' },
     ]
   },
+  getters: {
+    // comedyMovies() {
+    //   return store.state.movies.filter(movie => movie.gen == 'Comedy')
+    // },
+    // familyMovies() {
+    //   return store.state.movies.filter(movie => movie.gen == 'Family')
+    // },
+    moviesByGenre: state => gen => {
+      return state.movies.filter(movie => movie.gen === gen)
+    }
+  }
 })
 
 new Vue({
